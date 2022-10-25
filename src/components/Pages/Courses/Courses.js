@@ -1,15 +1,23 @@
 import React from 'react';
-import LeftSideNav from '../Shared/LeftSideNav/LeftSideNav';
+import { useLoaderData } from 'react-router-dom';
+import AllCourses from './AllCourses/AllCourses';
+import LeftSideNav from './LeftSideNav/LeftSideNav';
 
 const Courses = () => {
-  return (
 
-    <div className='grid grid-cols-12 px-20'>
-      <div className='grid col-span-4'>
+  const courses = useLoaderData();
+  // console.log(courses);
+
+  return (
+    <div className='grid grid-cols-12 gap-20'>
+      <div className='grid col-span-3 '>
         <LeftSideNav />
+
       </div>
-      <div className='grid col-span-8'>
-        <h2>All Courses</h2>
+      <div className='grid col-span-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-4'>
+        {
+          courses.map(course => <AllCourses key={course._id} course={course} />)
+        }
       </div>
     </div>
 

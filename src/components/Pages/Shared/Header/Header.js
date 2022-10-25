@@ -81,17 +81,17 @@ const Header = () => {
           {
             user?.uid ? <>
               <li className='flex items-center'>
-                <span title="Name" className='font-semibold hidden lg:block'>{user?.displayName}</span>
+                <span title={user?.displayName} className='font-semibold hidden lg:block'>{user?.displayName}</span>
 
                 <Link to='/' className='hidden lg:block ml-2'>
                   {
                     user?.photoURL ? <img
-                      title="Profile"
                       src={user?.photoURL}
                       className='rounded-full'
+                      title={user?.displayName}
                       style={{ height: '35px', width: '35px' }}
                     />
-                      : <FaUserAlt title="Profile" className='hidden lg:block' />
+                      : <FaUserAlt title={user?.displayName} className='hidden lg:block' />
                   }
                 </Link>
               </li>
@@ -267,12 +267,12 @@ const Header = () => {
                           <Link to='/profile'>
                             {
                               user?.photoURL ? <img
-                                title="Profile"
+                                title={user.displayName}
                                 src={user?.photoURL}
                                 className='rounded-full'
                                 style={{ height: '35px', width: '35px' }}
                               />
-                                : <FaUserAlt title="Profile" />
+                                : <FaUserAlt title={user.displayName} />
                             }
                           </Link>
                         </div>
