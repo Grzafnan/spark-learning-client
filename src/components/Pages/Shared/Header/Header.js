@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Switch } from '@headlessui/react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [enabled, setEnabled] = useState(false);
+
+  const { user, logOut } = useContext(AuthContext);
 
   return (
     <div className="px-4 py-5 mx-auto w-full md:px-24 lg:px-12 shadow-lg bg-gray-100 sticky top-0 z-40">
@@ -76,6 +80,50 @@ const Header = () => {
               About us
             </a>
           </li>
+
+          {
+            user?.uid ? <>
+              <li className='flex items-center'>
+                <span title="Name" className='font-semibold hidden lg:block'>{user?.displayName}</span>
+
+                <Link to='/' className='hidden lg:block ml-2'>
+                  {
+                    user?.photoURL ? <img
+                      title="Profile"
+                      src={user?.photoURL}
+                      className='rounded-full'
+                      style={{ height: '35px', width: '35px' }}
+                    />
+                      : <FaUserAlt title="Profile" className='hidden lg:block' />
+                  }
+                </Link>
+              </li>
+
+
+              <li>
+                <button
+                  onClick={logOut}
+                  className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
+                  aria-label="Log out"
+                  title="Log out"
+                >
+                  Log out
+                </button>
+              </li>
+            </>
+              :
+              <li>
+                <Link
+                  to="/login"
+                  className="inline-flex items-center justify-center h-10 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
+                  aria-label="Sign in"
+                  title="Sign in"
+                >
+                  Sign in
+                </Link>
+              </li>
+          }
+
           <li>
             <Switch
               checked={enabled}
@@ -89,16 +137,6 @@ const Header = () => {
                   } inline-block h-4 w-4 transform rounded-full bg-white transition`}
               />
             </Switch>
-          </li>
-          <li>
-            <Link
-              to="/login"
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
-              aria-label="Sign in"
-              title="Sign in"
-            >
-              Sign in
-            </Link>
           </li>
         </ul>
         <div className="lg:hidden">
@@ -212,16 +250,49 @@ const Header = () => {
                         About us
                       </a>
                     </li>
-                    <li>
-                      <Link
-                        to="/login"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
-                        aria-label="Sign in"
-                        title="Sign in"
-                      >
-                        Sign in
-                      </Link>
-                    </li>
+
+                    {
+                      user?.uid ? <>
+                        <div className='flex flex-col-reverse items-center gap-2'>
+                          <span className="font-semibold" title="Name">{user?.displayName}</span>
+
+                          <Link to='/profile'>
+                            {
+                              user?.photoURL ? <img
+                                title="Profile"
+                                src={user?.photoURL}
+                                className='rounded-full'
+                                style={{ height: '35px', width: '35px' }}
+                              />
+                                : <FaUserAlt title="Profile" />
+                            }
+                          </Link>
+                        </div>
+
+                        <li>
+                          <button
+                            onClick={logOut}
+                            className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide w-full  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
+                            aria-label="Log out"
+                            title="Log out"
+                          >
+                            Log out
+                          </button>
+                        </li>
+                      </>
+                        :
+                        <li>
+                          <Link
+                            to="/login"
+                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
+                            aria-label="Sign in"
+                            title="Sign in"
+                          >
+                            Sign in
+                          </Link>
+                        </li>
+                    }
+
                   </ul>
                 </nav>
               </div>

@@ -95,8 +95,6 @@ const Register = () => {
   }
 
 
-
-
   return (
     <div className="">
       <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
