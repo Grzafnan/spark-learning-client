@@ -4,6 +4,7 @@ import ErrorPage from "../components/Pages/ErrorPage/ErrorPage";
 import Home from "../components/Pages/Home/Home";
 import Login from "../components/Pages/Login/Login/Login";
 import Register from "../components/Pages/Login/Register/Register";
+import Footer from "../components/Pages/Shared/Footer/Footer";
 import Main from "../layout/Main/Main";
 
 export const router = createBrowserRouter([

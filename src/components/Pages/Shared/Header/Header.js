@@ -3,6 +3,7 @@ import { Switch } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
+import logo from '../../../../assets/logo.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,43 +12,29 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
   return (
-    <div className="px-4 py-5 mx-auto w-full md:px-24 lg:px-12 shadow-lg bg-gray-100 sticky top-0 z-40">
+    <div className="px-4 py-5 mx-auto w-full md:px-24 lg:px-12 shadow-lg bg-gray-100 sticky top-0 z-40" id="jump_to_me">
       <div className="relative flex items-center justify-between">
-        <a
-          href="/home"
+        <Link
+          to="/"
           aria-label="Home"
           title="Home"
           className="inline-flex items-center"
         >
-          <svg
-            className="w-8 text-purple-500"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12" />
-            <rect x="3" y="17" width="7" height="6" />
-            <rect x="14" y="1" width="7" height="6" />
-            <rect x="14" y="11" width="7" height="12" />
-          </svg>
+          <img src={logo} className="w-20" alt="" />
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 ">
-            Clever Tree
+            Spark Learning
           </span>
-        </a>
+        </Link>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
+            <Link
+              to="/home"
               aria-label="Home"
               title="Home"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <Link
@@ -60,25 +47,35 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/blog"
               aria-label="Blog"
               title="Blog"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
             >
               Blog
-            </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/faq"
+              aria-label="FAQ"
+              title="FAQ"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+            >
+              FAQ
+            </Link>
           </li>
 
           <li>
-            <a
-              href="/"
+            <Link
+              to='/about'
               aria-label="About us"
               title="About us"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
             >
               About us
-            </a>
+            </Link>
           </li>
 
           {
@@ -166,13 +163,13 @@ const Header = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       aria-label="Home"
                       title="Home"
                       className="inline-flex items-center"
                     >
-                      <svg
+                      {/* <svg
                         className="w-8 text-blue-500"
                         viewBox="0 0 24 24"
                         strokeLinejoin="round"
@@ -186,11 +183,12 @@ const Header = () => {
                         <rect x="3" y="17" width="7" height="6" />
                         <rect x="14" y="1" width="7" height="6" />
                         <rect x="14" y="11" width="7" height="12" />
-                      </svg>
+                      </svg> */}
+                      <img src={logo} className="w-20" alt="" />
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Clever Tree
+                        Spark Learning
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -211,14 +209,14 @@ const Header = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="/home"
+                      <Link
+                        to="/home"
                         aria-label="Home"
                         title="Home"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
                       >
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link
@@ -231,24 +229,34 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/blog"
                         aria-label="Blog"
                         title="Blog"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
                       >
                         Blog
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/faq"
+                        aria-label="FAQ"
+                        title="FAQ"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+                      >
+                        FAQ
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/about"
                         aria-label="About us"
                         title="About us"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
                       >
                         About us
-                      </a>
+                      </Link>
                     </li>
 
                     {

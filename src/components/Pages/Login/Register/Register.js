@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 const Register = () => {
   const [showpass, setShowPass] = useState(false);
+  const [error, setError] = useState('')
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -23,7 +24,6 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    // console.log(name, photoUrl, email, password);
 
     createUser(email, password)
       .then((userCredential) => {
@@ -31,14 +31,15 @@ const Register = () => {
         const user = userCredential.user;
         updateName();
         verify();
+        setError('')
         form.reset();
-        console.log(user);
+
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error(errorMessage);
+        setError(errorMessage);
         // ..
       });
 
@@ -49,6 +50,7 @@ const Register = () => {
           // ...
         }).catch((error) => {
           // An error occurred
+          setError(error.message)
           // ...
         });
     }
@@ -77,7 +79,7 @@ const Register = () => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error(errorMessage);
+        setError(errorMessage);
       });
   }
 
@@ -91,7 +93,7 @@ const Register = () => {
         //...
       })
       .catch((error) => {
-        console.error(error.message);
+        setError(error.message);
       })
   }
 
@@ -139,21 +141,21 @@ const Register = () => {
               {" "}
               Full Name{" "}
             </label>
-            <input id="name" aria-labelledby="name" name='name' type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter name here" />
+            <input id="name" aria-labelledby="name" name='name' type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter name here" required />
           </div>
           <div>
             <label htmlFor="photo" className="text-sm font-medium leading-none text-gray-800">
               {" "}
               Photo URL{" "}
             </label>
-            <input id="photo Url" aria-labelledby="Photo URL" name='photo' type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter photo URL here" />
+            <input id="photo Url" aria-labelledby="Photo URL" name='photo' type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter photo URL here" required />
           </div>
           <div>
             <label htmlFor="email" className="text-sm font-medium leading-none text-gray-800">
               {" "}
               Email{" "}
             </label>
-            <input id="email" aria-labelledby="email" name='email' type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter email here " />
+            <input id="email" aria-labelledby="email" name='email' type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter email here " required />
           </div>
           <div className="mt-6 w-full">
             <label htmlFor="myInput" className="text-sm font-medium leading-none text-gray-800">
@@ -161,7 +163,7 @@ const Register = () => {
               Password{" "}
             </label>
             <div className="relative flex items-center justify-center">
-              <input id="myInput" type={showpass ? "text" : "password"} name='password' className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+              <input id="myInput" type={showpass ? "text" : "password"} name='password' className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" required />
               <div onClick={() => setShowPass(!showpass)} className="absolute right-0 mt-2 mr-3 cursor-pointer">
                 <div id="show">
                   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,8 +184,9 @@ const Register = () => {
               </div>
             </div>
           </div>
+          <p className='text-red-600 mt-2'>{error}</p>
           <div className="mt-8">
-            <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+            <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 text-sm font-semibold leading-none text-white focus:outline-none bg-blue-600 border rounded hover:bg-blue-500 py-4 w-full">
               Register
             </button>
           </div>

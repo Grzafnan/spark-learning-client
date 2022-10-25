@@ -6,6 +6,8 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
   const [showpass, setShowPass] = useState(false);
+  const [error, setError] = useState('')
+
 
   const { singIn, signInWithProvider } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
@@ -23,14 +25,15 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
+        setError('')
         form.reset()
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error(errorMessage);
+        setError(error.message);
       });
   }
 
@@ -40,12 +43,13 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         // console.log(user);
+
         // ...
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error(errorMessage);
+        setError(error.message);
       });
   }
 
@@ -59,7 +63,7 @@ const Login = () => {
         //...
       })
       .catch((error) => {
-        console.error(error.message);
+        setError(error.message);
       })
   }
 
@@ -107,7 +111,7 @@ const Login = () => {
               {" "}
               Email{" "}
             </label>
-            <input id="email" aria-labelledby="email" name='email' type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter email here " />
+            <input id="email" aria-labelledby="email" name='email' type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Enter email here " required />
           </div>
           <div className="mt-6 w-full">
             <label htmlFor="myInput" className="text-sm font-medium leading-none text-gray-800">
@@ -115,7 +119,7 @@ const Login = () => {
               Password{" "}
             </label>
             <div className="relative flex items-center justify-center">
-              <input id="myInput" name='password' type={showpass ? "text" : "password"} className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+              <input id="myInput" name='password' type={showpass ? "text" : "password"} className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" required />
               <div onClick={() => setShowPass(!showpass)} className="absolute right-0 mt-2 mr-3 cursor-pointer">
                 <div id="show">
                   <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +139,7 @@ const Login = () => {
                 </div>
               </div>
             </div>
+            <p className='text-red-600 mt-2'>{error}</p>
           </div>
           <div className="mt-8">
             <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 text-sm font-semibold leading-none text-white focus:outline-none bg-blue-600 border rounded hover:bg-blue-500 py-4 w-full">
