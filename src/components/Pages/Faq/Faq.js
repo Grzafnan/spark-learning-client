@@ -15,7 +15,7 @@ const Faq = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <img src="https://i.ibb.co/DQ4FZhL/pattern-bg.png" alt="blue pattern background" className="absolute w-full h-64 md:h-96 object-center object-fit z-0" />
+        <img src="https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?w=1380&t=st=1666714066~exp=1666714666~hmac=614d74a61990cc2b544ac1635e2ee612a4aa822c5016cced713d09203b71af8a" alt="blue pattern background" className="absolute w-full h-64 md:h-96 object-center object-fit z-0" />
         <div className="relative flex flex-col items-center justify-center sm:px-0 px-6 z-20 pb-32">
           <div className="md:py-36 py-20">
             <h1 role="heading" className="xl:text-6xl md:text-5xl text-xl font-bold leading-10 text-white">
