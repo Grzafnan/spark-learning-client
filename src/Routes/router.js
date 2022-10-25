@@ -1,6 +1,9 @@
 import { createBrowserRouter, } from "react-router-dom";
-import ErrorPage from "../components/ErrorPage/ErrorPage";
-import Home from "../components/Home/Home";
+import Courses from "../components/Pages/Courses/Courses";
+import ErrorPage from "../components/Pages/ErrorPage/ErrorPage";
+import Home from "../components/Pages/Home/Home";
+import Login from "../components/Pages/Login/Login/Login";
+import Register from "../components/Pages/Login/Register/Register";
 import Main from "../layout/Main/Main";
 
 export const router = createBrowserRouter([
@@ -18,8 +21,17 @@ export const router = createBrowserRouter([
         element: <Home />
       },
       {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },
+      {
         path: '/courses',
-        element: <></>
+        element: <Courses />,
+        loader: () => fetch('http://localhost:5000/courses')
       }
     ]
   }

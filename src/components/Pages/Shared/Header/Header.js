@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Switch } from '@headlessui/react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,14 +46,14 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/courses"
               aria-label="Courses"
               title="Courses"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
             >
               Courses
-            </a>
+            </Link>
           </li>
           <li>
             <a
@@ -90,14 +91,14 @@ const Header = () => {
             </Switch>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/login"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
               aria-label="Sign in"
               title="Sign in"
             >
               Sign in
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="lg:hidden">
@@ -182,14 +183,14 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/courses"
                         aria-label="Courses"
                         title="Courses"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
                       >
                         Courses
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a
@@ -212,14 +213,14 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/login"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
                         aria-label="Sign in"
                         title="Sign in"
                       >
                         Sign in
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
