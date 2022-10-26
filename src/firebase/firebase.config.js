@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAp4ep50Cj6sA15ykI00oC_SppbIQXKDGs",
-  authDomain: "clever-tree-auth.firebaseapp.com",
-  projectId: "clever-tree-auth",
-  storageBucket: "clever-tree-auth.appspot.com",
-  messagingSenderId: "558825201158",
-  appId: "1:558825201158:web:79080a3afd0b6c5eb9ad87"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

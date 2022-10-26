@@ -35,7 +35,6 @@ const Register = () => {
         verify();
         setError('')
         form.reset();
-        toast.success('Registration successfully Done.')
         navigate('/')
 
         // ...
