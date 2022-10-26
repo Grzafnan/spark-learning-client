@@ -10,6 +10,7 @@ import Faq from "../components/Pages/Faq/Faq";
 import Home from "../components/Pages/Home/Home";
 import Login from "../components/Pages/Login/Login/Login";
 import Register from "../components/Pages/Login/Register/Register";
+import Profile from "../components/Pages/Profile/Profile";
 
 import Main from "../layout/Main/Main";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
@@ -49,25 +50,29 @@ export const router = createBrowserRouter([
         element: <Blog />
       },
       {
+        path: '/profile',
+        element: <Profile />
+      },
+      {
         path: '/course/:id',
         element: <CourseSummary />,
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+        loader: ({ params }) => fetch(`https://xplore-server-side-grzafnan.vercel.app/course/${params.id}`)
       },
       {
         path: '/courses',
         element: <Courses />,
-        loader: () => fetch('http://localhost:5000/courses'),
+        loader: () => fetch('https://xplore-server-side-grzafnan.vercel.app/courses'),
       },
       {
         path: '/courses/:id',
         element: <AllCourses />,
-        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+        loader: ({ params }) => fetch(`https://xplore-server-side-grzafnan.vercel.app/courses/${params.id}`)
       },
 
       {
         path: 'checkout/:id',
         element: <PrivateRoutes><CheckOut /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+        loader: ({ params }) => fetch(`https://xplore-server-side-grzafnan.vercel.app/course/${params.id}`)
       }
 
     ]

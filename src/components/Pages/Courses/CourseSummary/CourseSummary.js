@@ -3,9 +3,9 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaDownload } from "react-icons/fa";
 import ReactDOM from "react-dom";
 import Pdf from "react-to-pdf";
-const ref = React.createRef();
 
 const CourseSummary = () => {
+  const ref = React.createRef();
   const courseData = useLoaderData();
 
   const { details, image_url, title, _id, student, price, level, feature } = courseData;

@@ -7,15 +7,15 @@ const LeftSideNav = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/courses-categories')
+    fetch('https://xplore-server-side-grzafnan.vercel.app/courses-categories')
       .then(res => res.json())
       .then(data => setCategories(data));
   }, [])
 
   return (
     <>
-      <div className="min-h-screen p-3 space-y-2 w-60">
-        <ul className="pt-2 pb-4 space-y-1 text-base">
+      <div className="flex justify-center  md:min-h-screen p-3 space-y-2 md:w-64 lg:w-96">
+        <ul className="pt-2 pb-4 space-y-1 text-base min-w-full">
           {
             categories.map(category => <li key={category.id} className="bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold">
               <Link rel="noopener noreferrer" to={`/courses/${category.id}`} className="flex items-center p-2 space-x-3 rounded-md">

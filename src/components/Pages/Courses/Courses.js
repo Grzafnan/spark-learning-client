@@ -9,22 +9,17 @@ const Courses = () => {
   // console.log(coursesData);
 
   return (
-    <div className='grid grid-cols-12 gap-20'>
+    <div className='md:grid md:grid-cols-12 gap-20 my-10'>
       <div className='grid col-span-3 '>
         <LeftSideNav />
 
       </div>
-      <div className='grid col-span-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-4'>
-
-
-        {/* <Outlet /> */}
+      <div className='md:grid md:col-span-9 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-4 w-full'>
 
         {
           coursesData.map(course => <CourseContainer key={course._id
           } course={course} />)
         }
-
-
 
       </div>
     </div>

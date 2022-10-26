@@ -21,7 +21,7 @@ const Blog = () => {
             <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-900 dark:text-gray-100">The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.PrivateRoute component is the blueprint for all private routes in the application. If the user is logged in, go on and display the component in question; otherwise, redirect the user to sign-in page. Additionally, we can define the logic of isLogin utility function separately in utility folder .</p>
           </details>
           <details className="w-full border rounded-lg">
-            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 font-semibold"> HWhat is Node? How does Node work?</summary>
+            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400 font-semibold"> What is Node? How does Node work?</summary>
             <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-900 dark:text-gray-100">Node. js is a JavaScript runtime environment that achieves low latency and high throughput by taking a “non-blocking” approach to serving requests. In other words, Node. js wastes no time or resources on waiting for I/O requests to return.
               It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable,lightweight, fast, and data-intensive.</p>
           </details>

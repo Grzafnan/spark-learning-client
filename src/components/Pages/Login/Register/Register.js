@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -9,6 +9,8 @@ const Register = () => {
   const [error, setError] = useState('')
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+  const navigate = useNavigate();
+
 
   const { createUser,
     updateProfileName,
@@ -33,6 +35,8 @@ const Register = () => {
         verify();
         setError('')
         form.reset();
+        toast.success('Registration successfully Done.')
+        navigate('/')
 
         // ...
       })

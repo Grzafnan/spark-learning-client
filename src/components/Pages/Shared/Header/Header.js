@@ -83,7 +83,7 @@ const Header = () => {
               <li className='flex items-center'>
                 <span title={user?.displayName} className='font-semibold hidden lg:block'>{user?.displayName}</span>
 
-                <Link to='/' className='hidden lg:block ml-2'>
+                <Link to='/profile' className='hidden lg:block ml-2'>
                   {
                     user?.photoURL ? <img
                       src={user?.photoURL}
@@ -125,7 +125,7 @@ const Header = () => {
             <Switch
               checked={enabled}
               onChange={setEnabled}
-              className={`${enabled ? 'bg-blue-600' : 'bg-gray-500'
+              className={`${enabled ? 'bg-black' : 'bg-blue-600'
                 } relative inline-flex h-6 w-11 items-center rounded-full`}
             >
               <span className="sr-only">Enable notifications</span>
@@ -162,7 +162,7 @@ const Header = () => {
             <div className="absolute top-0 left-0 w-full">
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <div>
+                  <div className='w-11/12 flex justify-between items-center '>
                     <Link
                       to="/"
                       aria-label="Home"
@@ -189,6 +189,21 @@ const Header = () => {
                         Spark Learning
                       </span>
                     </Link>
+
+
+                    <Switch
+                      checked={enabled}
+                      onChange={setEnabled}
+                      className={`${enabled ? 'bg-black' : 'bg-blue-600'
+                        } relative inline-flex h-6 w-11 items-center rounded-full`}
+                    >
+                      <span className="sr-only">Enable notifications</span>
+                      <span
+                        className={`${enabled ? 'translate-x-6' : 'translate-x-1'
+                          } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+                      />
+                    </Switch>
+
                   </div>
                   <div>
                     <button

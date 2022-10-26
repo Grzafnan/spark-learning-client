@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -23,7 +24,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     singIn(email, password)
       .then((userCredential) => {
@@ -72,6 +73,7 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
+        toast.success('Successfully sign in.')
         navigate(from, { replace: true });
         //...
       })
