@@ -1,25 +1,66 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { FaDownload } from "react-icons/fa";
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const CourseSummary = () => {
   const courseData = useLoaderData();
 
-  const { details, image_url, title, _id, student, level, feature } = courseData;
+  const { details, image_url, title, _id, student, price, level, feature } = courseData;
+
+
 
   return (
-    <section>
-      <div className="dark:bg-violet-400">
-        <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-900">
-          <h1 className="text-4xl font-bold leading-none xl:max-w-3xl dark:text-gray-900">{title}</h1>
-          <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-900">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
-          <div className="flex flex-wrap justify-center">
-            <button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-800 dark:text-gray-50">Get started</button>
-            <button type="button" className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-700 dark:text-gray-900">Learn more</button>
+    <div ref={ref} className=" w-3/4 lg:w-3/5 mx-auto my-10 p-4 shadow-md dark:bg-gray-900 dark:text-gray-100">
+      <div className="flex justify-between pb-4 border-bottom">
+        <div className="flex items-center">
+          <h2 className='font-semibold text-lg md:text-2xl '>{title}</h2>
+        </div>
+        <Pdf targetRef={ref} filename="code-example.pdf">
+          {({ toPdf }) => <button onClick={toPdf}>
+            <FaDownload className='text-green-600 text-2xl md:text-3xl' /></button>}
+        </Pdf>
+
+      </div>
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <img src={image_url} alt="" className="block  w-full rounded-md h-72 dark:bg-gray-500" />
+        </div>
+        <div className="space-y-2">
+          <div className='flex justify-between items-center'>
+            <p className='md:text-lg font-semibold'>Level: {level}</p>
+            <p className='md:text-lg font-semibold'>Student: {student}</p>
+            <p className='md:text-lg font-semibold'>Fee: ${price}</p>
+
+          </div>
+
+
+          <p className="leading-snug text-justify dark:text-gray-400">{details}</p>
+
+          <div className='pt-8'>
+            <h2 className='text-xl font-semibold  underline'>You Will Gain Those Skills From This Course!</h2>
+            <ul className='text-start list-disc p-6'>
+              {
+                feature?.map((item, idx) => <li
+                  key={idx}
+                  className=''
+                >
+
+                  {item}
+                </li>)
+              }
+            </ul>
+
+            <div className='flex justify-center'>
+              <Link to={`../checkout/${_id}`} >
+                <button className='bg-blue-500 text-white hover:bg-blue-600 font-semibold px-6 py-2 rounded '>Get Premium Access</button></Link>
+            </div>
           </div>
         </div>
       </div>
-      <img src={image_url} alt="" className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500" />
-    </section>
+    </div>
   );
 };
 

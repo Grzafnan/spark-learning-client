@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
@@ -8,8 +8,12 @@ const Login = () => {
   const [showpass, setShowPass] = useState(false);
   const [error, setError] = useState('')
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  const { singIn, signInWithProvider } = useContext(AuthContext);
+
+  const { singIn, signInWithProvider, setLoading } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -28,13 +32,17 @@ const Login = () => {
         // console.log(user);
         setError('')
         form.reset()
+        navigate(from, { replace: true });
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(error.message);
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
   }
 
   const signInWithGoogle = () => {
@@ -43,6 +51,7 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         // console.log(user);
+        navigate(from, { replace: true });
 
         // ...
       }).catch((error) => {
@@ -60,6 +69,7 @@ const Login = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
         //...
       })
       .catch((error) => {
