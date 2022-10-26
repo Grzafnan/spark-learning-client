@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Switch } from '@headlessui/react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
 import logo from '../../../../assets/logo.png'
@@ -12,7 +12,7 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
   return (
-    <div className="px-4 py-5 mx-auto w-full md:px-24 lg:px-12 shadow-lg bg-gray-100 sticky top-0 z-40" id="jump_to_me">
+    <div className="px-4 py-5  w-full md:px-24 lg:px-12 shadow-md  bg-gray-100 sticky top-0 z-40">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
@@ -27,55 +27,55 @@ const Header = () => {
         </Link>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <Link
+            <NavLink
               to="/home"
               aria-label="Home"
               title="Home"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/courses"
               aria-label="Courses"
               title="Courses"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
             >
               Courses
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/blog"
               aria-label="Blog"
               title="Blog"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
             >
               Blog
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/faq"
               aria-label="FAQ"
               title="FAQ"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
             >
               FAQ
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link
+            <NavLink
               to='/about'
               aria-label="About us"
               title="About us"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
             >
-              About us
-            </Link>
+              About
+            </NavLink>
           </li>
 
           {
@@ -169,21 +169,6 @@ const Header = () => {
                       title="Home"
                       className="inline-flex items-center"
                     >
-                      {/* <svg
-                        className="w-8 text-blue-500"
-                        viewBox="0 0 24 24"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeMiterlimit="10"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg> */}
                       <img src={logo} className="w-20" alt="" />
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Spark Learning
@@ -224,54 +209,54 @@ const Header = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <Link
+                      <NavLink
                         to="/home"
                         aria-label="Home"
                         title="Home"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
                       >
                         Home
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/courses"
                         aria-label="Courses"
                         title="Courses"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
                       >
                         Courses
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/blog"
                         aria-label="Blog"
                         title="Blog"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
                       >
                         Blog
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/faq"
                         aria-label="FAQ"
                         title="FAQ"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
                       >
                         FAQ
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink
                         to="/about"
                         aria-label="About us"
                         title="About us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
                       >
-                        About us
-                      </Link>
+                        About
+                      </NavLink>
                     </li>
 
                     {

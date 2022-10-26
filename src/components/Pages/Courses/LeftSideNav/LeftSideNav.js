@@ -14,7 +14,7 @@ const LeftSideNav = () => {
 
   return (
     <>
-      <div className="flex justify-center  md:min-h-screen p-3 space-y-2 md:w-64 lg:w-96">
+      <div className="flex justify-center md:min-h-screen p-3 space-y-2 md:w-64 lg:w-96">
         <ul className="pt-2 pb-4 space-y-1 text-base min-w-full">
           {
             categories.map(category => <li key={category.id} className="bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold">

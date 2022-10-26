@@ -13,7 +13,7 @@ const Footer = () => {
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
             }}
-            className="inline-block rounded-full bg-teal-600 p-2 text-white shadow transition hover:bg-teal-500 sm:p-3 lg:p-4"
+            className="inline-block rounded-full bg-blue-600 p-2 text-white shadow transition hover:bg-blue-500 sm:p-3 lg:p-4"
             href="#1"
             target="#jump_to_me"
           >
