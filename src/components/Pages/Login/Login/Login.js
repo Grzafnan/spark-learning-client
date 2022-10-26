@@ -59,7 +59,10 @@ const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(error.message);
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
   }
 
 
@@ -74,6 +77,9 @@ const Login = () => {
       })
       .catch((error) => {
         setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
       })
   }
 

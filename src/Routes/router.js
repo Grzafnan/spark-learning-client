@@ -1,5 +1,6 @@
 import { createBrowserRouter, } from "react-router-dom";
 import About from "../components/Pages/About/About";
+import Blog from "../components/Pages/Blog/Blog";
 import AllCourses from "../components/Pages/Courses/AllCourses/AllCourses";
 import CheckOut from "../components/Pages/Courses/CheckOut/CheckOut";
 import Courses from "../components/Pages/Courses/Courses";
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: '/faq',
         element: <Faq />
+      },
+      {
+        path: '/blog',
+        element: <Blog />
       },
       {
         path: '/course/:id',
