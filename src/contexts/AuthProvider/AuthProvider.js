@@ -9,6 +9,13 @@ const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [allCourse, setAllCourses] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:5000/courses/07')
+      .then(res => res.json())
+      .then(data => setAllCourses(data))
+  }, [])
 
 
 
@@ -63,7 +70,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     singIn,
     signInWithProvider,
-    loading
+    loading,
+    allCourse
   }
 
 

@@ -1,12 +1,14 @@
 import { createBrowserRouter, } from "react-router-dom";
 import About from "../components/Pages/About/About";
+import AllCourses from "../components/Pages/Courses/AllCourses/AllCourses";
 import Courses from "../components/Pages/Courses/Courses";
+import CourseSummary from "../components/Pages/Courses/CourseSummary/CourseSummary";
 import ErrorPage from "../components/Pages/ErrorPage/ErrorPage";
 import Faq from "../components/Pages/Faq/Faq";
 import Home from "../components/Pages/Home/Home";
 import Login from "../components/Pages/Login/Login/Login";
 import Register from "../components/Pages/Login/Register/Register";
-import Footer from "../components/Pages/Shared/Footer/Footer";
+
 import Main from "../layout/Main/Main";
 
 export const router = createBrowserRouter([
@@ -40,10 +42,20 @@ export const router = createBrowserRouter([
         element: <Faq />
       },
       {
+        path: '/course/:id',
+        element: <CourseSummary />,
+        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+      },
+      {
         path: '/courses',
         element: <Courses />,
-        loader: () => fetch('http://localhost:5000/courses')
-      }
+        loader: () => fetch('http://localhost:5000/courses'),
+      },
+      {
+        path: '/courses/:id',
+        element: <AllCourses />,
+        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+      },
     ]
   }
 ]);

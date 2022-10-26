@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
-const CourseCategory = ({ category }) => {
-  const { category_id, details, image_url, level, price, title, _id } = category;
+const CourseContainer = ({ course }) => {
+
+  const { category_id, details, image_url, level, price, title, _id } = course;
 
   return (
+
     <div>
       <div className=" rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 shadow-xl">
         <img src={image_url} alt="" className="w-full rounded-t-md h-72 dark:bg-gray-500" />
@@ -19,7 +21,8 @@ const CourseCategory = ({ category }) => {
         </Link>
       </div>
     </div>
+
   );
 };
 
-export default CourseCategory;
+export default CourseContainer;
