@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
 
 
@@ -72,7 +73,9 @@ const AuthProvider = ({ children }) => {
     signInWithProvider,
     loading,
     setLoading,
-    resetPassword
+    resetPassword,
+    enabled,
+    setEnabled
   }
 
 

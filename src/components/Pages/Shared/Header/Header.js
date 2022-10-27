@@ -6,11 +6,14 @@ import { FaUserAlt } from 'react-icons/fa';
 import logo from '../../../../assets/logo.png'
 import { toast } from 'react-toastify';
 
+
+
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [enabled, setEnabled] = useState(false);
 
-  const { user, logOut } = useContext(AuthContext);
+
+  const { user, logOut, enabled, setEnabled } = useContext(AuthContext);
 
 
   const handelLogout = () => {
@@ -25,7 +28,7 @@ const Header = () => {
   }
 
   return (
-    <div className="px-4 py-5  w-full md:px-24 lg:px-12 shadow-md  bg-gray-100 sticky top-0 z-40">
+    <div className="px-4 py-5 w-full md:px-24 lg:px-12 shadow-md  bg-gray-100 sticky top-0 z-40">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
