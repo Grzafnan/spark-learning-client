@@ -16,8 +16,6 @@ const AllCourses = () => {
 
         </div>
         <div className='md:grid md:col-span-9 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-4'>
-
-
           {
             categories?.map(category => <CourseCategory key={category._id} category={category} />)
           }

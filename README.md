@@ -4,7 +4,7 @@ Live Website link: https://clever-tree-auth.web.app
 
 ## Details About This Project
 
-- This Project is About Quizzes For Some Topics.
+- This Project is About Programming language Courses For Some Topics.
 - To Build This Project I used React, React router, Tailwind, Mamba Ui, daisyUi, react toast, create server side for fake data, HeroIcon and More react npm Packages etc.
 - Here You Find Some Courses about Programming, Javascript, CSS ,Html, Python, C++, PHP, Java,.
 - This site have 6 Main Routes (Home,Courses, and Blog,FAQs, About, Login , Profile Update page).
