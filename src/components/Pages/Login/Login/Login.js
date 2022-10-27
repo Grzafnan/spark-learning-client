@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, Fragment } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
+import { Dialog, Transition } from "@headlessui/react";
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { toast } from 'react-toastify';
 
@@ -8,13 +9,16 @@ import { toast } from 'react-toastify';
 const Login = () => {
   const [showpass, setShowPass] = useState(false);
   const [error, setError] = useState('')
+  const [resetEmail, setResetEmail] = useState('')
+  const [isOpen, setIsOpen] = useState(false);
+
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
 
-  const { singIn, signInWithProvider, setLoading } = useContext(AuthContext);
+  const { singIn, signInWithProvider, resetPassword, setLoading } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -64,6 +68,7 @@ const Login = () => {
       .finally(() => {
         setLoading(false);
       })
+
   }
 
 
@@ -83,6 +88,30 @@ const Login = () => {
       .finally(() => {
         setLoading(false);
       })
+  }
+
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const handelReset = () => {
+    resetPassword(resetEmail)
+      .then(() => {
+        // Password reset email sent!
+        toast.success('Reset Password sent successfully. Check your Email Address')
+        setIsOpen(false);
+        // ..
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(error.message);
+      });
   }
 
 
@@ -157,6 +186,75 @@ const Login = () => {
                 </div>
               </div>
             </div>
+            <p className='text-end hover:text-blue-600'>
+              <button onClick={openModal}>Forget password?</button>
+            </p>
+
+            <Transition appear show={isOpen} as={Fragment}>
+              <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <div className="fixed inset-0 bg-black bg-opacity-25" />
+                </Transition.Child>
+                <div className="fixed inset-0 overflow-y-auto">
+                  <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                        <Dialog.Title
+                          as="h3"
+                          className="text-lg font-medium leading-6 text-gray-900"
+                        >
+                          Reset Password
+                        </Dialog.Title>
+                        <div className="mt-2">
+                          <div className="col-span-full sm:col-span-3">
+                            <label htmlFor="name" className="text-md">
+                              Email
+                            </label>
+                            <input
+                              onChange={(e) => setResetEmail(e.target.value)}
+                              name="email"
+                              type="email"
+                              placeholder="Email Address"
+                              className="w-full  rounded-md  focus:ring-blue-600 py-2 border border-blue-600 mt-1 mb-2 pl-2  text-gray-900"
+                              required
+                            />
+                          </div>
+
+                        </div>
+                        <div className="mt-4">
+                          <button
+                            type="button"
+                            className="inline-flex justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 focus:outline-blue-600 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={handelReset}
+                          >
+                            Reset Password
+                          </button>
+                        </div>
+                      </Dialog.Panel>
+                    </Transition.Child>
+                  </div>
+                </div>
+              </Dialog>
+            </Transition >
+
+
+
             <p className='text-red-600 mt-2'>{error}</p>
           </div>
           <div className="mt-8">
