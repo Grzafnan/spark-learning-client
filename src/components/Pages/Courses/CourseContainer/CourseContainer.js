@@ -7,7 +7,7 @@ const CourseContainer = ({ course }) => {
 
   return (
 
-    <div className=" rounded-md  dark:bg-gray-900 dark:text-gray-100 shadow-2xl mb-10 md:mb-0 relative">
+    <div className=" rounded-md  dark:bg-gray-900 dark:text-gray-100 shadow-2xl mb-10 md:mb-0 relative  dark:text-white dark:bg-[#2e2e2e]">
       <img src={image_url} alt="" className="w-full rounded-t-md h-72 dark:bg-gray-500" />
       <div className="flex flex-col justify-between p-2 space-y-8 w-full">
         <div className="space-y-2">

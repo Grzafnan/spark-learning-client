@@ -35,7 +35,7 @@ const CheckOut = () => {
 
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center  dark:text-white dark:bg-[#2e2e2e]">
       <div className="py-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
         <div className="flex flex-col justify-start items-start w-full space-y-9">
           <div className="flex justify-start flex-col items-start space-y-2">
@@ -54,7 +54,7 @@ const CheckOut = () => {
           </div>
 
           <div className="flex flex-col xl:flex-row justify-center xl:justify-between space-y-6 xl:space-y-0 xl:space-x-6 w-full">
-            <div className="xl:w-3/5 flex flex-col sm:flex-row xl:flex-col justify-center items-center bg-gray-100 py-7 sm:py-0 xl:py-10 px-10 xl:w-full">
+            <div className="xl:w-3/5 flex flex-col sm:flex-row xl:flex-col justify-center items-center  dark:text-white dark:bg-[#2e2e2e] bg-gray-100 py-7 sm:py-0 xl:py-10 px-10 xl:w-full">
               <div className="flex flex-col justify-start items-start w-full space-y-4">
                 <p className="text-xl md:text-2xl leading-normal text-gray-800">{title}</p>
                 <p className="text-base font-semibold leading-none text-gray-600">${price}</p>

@@ -6,7 +6,7 @@ const CourseCategory = ({ category }) => {
 
   return (
 
-    <div className=" rounded-md dark:bg-gray-900 dark:text-gray-100 shadow-2xl mb-10 md:mb-0 relative ">
+    <div className=" rounded-md dark:bg-gray-900 dark:text-white dark:bg-[#2e2e2e] shadow-2xl mb-10 md:mb-0 relative ">
       <img src={image_url} alt="" className="w-full rounded-t-md h-72 dark:bg-gray-500" />
       <div className="flex flex-col justify-between p-2 pb-4 space-y-8">
         <div className="space-y-2">

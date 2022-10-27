@@ -12,7 +12,7 @@ const CourseSummary = () => {
 
 
   return (
-    <div ref={ref} className=" w-3/4 lg:w-3/5 mx-auto my-10 p-4 shadow-md dark:bg-gray-900 dark:text-gray-100">
+    <div ref={ref} className=" w-3/4 lg:w-3/5 mx-auto py-10 p-4 shadow-md dark:bg-gray-900 dark:text-gray-100">
       <div className="flex justify-between pb-4 border-bottom">
         <div className="flex items-center">
           <h2 className='font-semibold text-lg md:text-2xl '>{title}</h2>

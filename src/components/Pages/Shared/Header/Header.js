@@ -9,11 +9,20 @@ import { toast } from 'react-toastify';
 
 
 
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { user, logOut, enabled, setEnabled, handelThemeSwitch } = useContext(AuthContext);
 
-  const { user, logOut, enabled, setEnabled } = useContext(AuthContext);
+  const [isDarkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = (checked: boolean) => {
+    setDarkMode(checked);
+    handelThemeSwitch()
+  };
+
+
 
 
   const handelLogout = () => {
@@ -27,8 +36,16 @@ const Header = () => {
       });
   }
 
+
+  const handelSwitch = () => {
+    setEnabled(!enabled);
+    handelThemeSwitch();
+  }
+
+
+
   return (
-    <div className="px-4 py-5 w-full md:px-24 lg:px-12 shadow-md  bg-gray-100 sticky top-0 z-40">
+    <div className="px-4 py-5 w-full md:px-24 lg:px-12 shadow-md bg-gray-100 dark:bg-[#2e2e2e] sticky top-0 z-40">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
@@ -47,7 +64,7 @@ const Header = () => {
               to="/home"
               aria-label="Home"
               title="Home"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               Home
             </NavLink>
@@ -57,7 +74,7 @@ const Header = () => {
               to="/courses"
               aria-label="Courses"
               title="Courses"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               Courses
             </NavLink>
@@ -67,7 +84,7 @@ const Header = () => {
               to="/blog"
               aria-label="Blog"
               title="Blog"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               Blog
             </NavLink>
@@ -77,7 +94,7 @@ const Header = () => {
               to="/faq"
               aria-label="FAQ"
               title="FAQ"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               FAQ
             </NavLink>
@@ -88,7 +105,7 @@ const Header = () => {
               to='/about'
               aria-label="About us"
               title="About us"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               About
             </NavLink>
@@ -140,7 +157,7 @@ const Header = () => {
           <li>
             <Switch
               checked={enabled}
-              onChange={setEnabled}
+              onChange={handelSwitch}
               className={`${enabled ? 'bg-black' : 'bg-blue-600'
                 } relative inline-flex h-6 w-11 items-center rounded-full`}
             >
@@ -176,7 +193,7 @@ const Header = () => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 bg-white border rounded shadow-sm">
+              <div className="p-5 dark:bg-[#2e2e2e] bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div className='w-11/12 flex justify-between items-center '>
                     <Link
@@ -194,7 +211,7 @@ const Header = () => {
 
                     <Switch
                       checked={enabled}
-                      onChange={setEnabled}
+                      onChange={handelSwitch}
                       className={`${enabled ? 'bg-black' : 'bg-blue-600'
                         } relative inline-flex h-6 w-11 items-center rounded-full`}
                     >
@@ -229,7 +246,7 @@ const Header = () => {
                         to="/home"
                         aria-label="Home"
                         title="Home"
-                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
                       >
                         Home
                       </NavLink>
@@ -239,7 +256,7 @@ const Header = () => {
                         to="/courses"
                         aria-label="Courses"
                         title="Courses"
-                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
                       >
                         Courses
                       </NavLink>
@@ -249,7 +266,7 @@ const Header = () => {
                         to="/blog"
                         aria-label="Blog"
                         title="Blog"
-                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
                       >
                         Blog
                       </NavLink>
@@ -259,7 +276,7 @@ const Header = () => {
                         to="/faq"
                         aria-label="FAQ"
                         title="FAQ"
-                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
                       >
                         FAQ
                       </NavLink>
@@ -269,7 +286,7 @@ const Header = () => {
                         to="/about"
                         aria-label="About us"
                         title="About us"
-                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500"}
+                        className={({ isActive }) => isActive ? "font-medium tracking-wide transition-colors duration-200 hover:text-blue-500 text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
                       >
                         About
                       </NavLink>
@@ -278,7 +295,7 @@ const Header = () => {
                     {
                       user?.uid ? <>
                         <div className='flex flex-col-reverse items-center gap-2'>
-                          <span className="font-semibold" title="Name">{user?.displayName}</span>
+                          <span className="font-semibold  dark:text-white" title="Name">{user?.displayName}</span>
 
                           <Link to='/profile'>
                             {

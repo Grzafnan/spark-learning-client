@@ -8,12 +8,12 @@ const Courses = () => {
   // console.log(coursesData);
 
   return (
-    <div className='md:grid md:grid-cols-12 md:gap-16 lg:gap-10 md:px-6 my-10'>
-      <div className='md:grid md:col-span-3'>
+    <div className='md:grid md:grid-cols-12 md:gap-16 lg:gap-10 md:px-6 py-10  dark:text-white dark:bg-[#2e2e2e]'>
+      <div className='md:grid md:col-span-3  dark:text-white dark:bg-[#2e2e2e]'>
         <LeftSideNav />
 
       </div>
-      <div className='md:grid md:col-span-9 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-4'>
+      <div className='md:grid md:col-span-9 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-4  dark:text-white dark:bg-[#2e2e2e]'>
 
         {
           coursesData.map(course => <CourseContainer key={course._id

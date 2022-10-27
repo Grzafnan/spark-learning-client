@@ -4,7 +4,7 @@ import logo from '../../../../assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-gray-100">
+    <footer aria-label="Site Footer" className="bg-gray-100  dark:text-white dark:bg-[#2e2e2e]">
       <div
         className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24"
       >

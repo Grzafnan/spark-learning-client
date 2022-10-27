@@ -5,7 +5,7 @@ const Home = () => {
 
   return (
     <div className="mb-16 min-h-screen">
-      <div className="bg-gray-100">
+      <div className="bg-gray-100  dark:text-white dark:bg-[#2e2e2e]">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <div>
@@ -18,7 +18,7 @@ const Home = () => {
                 <svg
                   viewBox="0 0 52 24"
                   fill="currentColor"
-                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20  dark:text-white text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
                 >
                   <defs>
                     <pattern
@@ -41,11 +41,11 @@ const Home = () => {
               </span>{' '}
               a person to be a professional programmer
             </h2>
-            <p className="text-justify text-gray-600 ">
+            <p className="text-justify text-gray-600  dark:text-white ">
               Become a remote software developer, no matter where you are. Apply now, no upfront costs! Work on real world projects with your coding partner. Connect with global opportunities! $0 upfront cost. Global community support. Dedicated career coaching. Do it at Your Own Place.
             </p>
           </div>
-          <div className="flex items-center sm:justify-center">
+          <div className="flex items-center sm:justify-center  ">
             <Link to='/courses'>
               <button
                 className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-600 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
@@ -56,7 +56,7 @@ const Home = () => {
             <Link
               to="/about"
               aria-label="About us"
-              className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-blue-700"
+              className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-blue-700 dark:text-white dark:hover:text-blue-600"
             >
               Learn more
             </Link>
@@ -64,10 +64,10 @@ const Home = () => {
         </div>
       </div>
       <div className="relative px-4 sm:px-0 py-10 md:py-0">
-        <div className="absolute inset-0 bg-gray-100 h-1/2" />
-        <div className="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
+        <div className="absolute inset-0 bg-gray-100 h-1/2  dark:text-white dark:bg-[#2e2e2e]" />
+        <div className="relative grid mx-auto overflow-hidden  dark:text-white dark:bg-[#2e2e2e] bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
           <div className="inline-block p-8 text-center">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
+            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full  dark:text-white dark:bg-[#2e2e2e] bg-indigo-50">
               <svg
                 className="w-10 h-10 text-deep-purple-accent-400"
                 stroke="currentColor"
@@ -82,12 +82,12 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <p className="font-bold tracking-wide text-gray-800">
+            <p className="font-bold tracking-wide  dark:text-white  text-gray-800">
               Make it better
             </p>
           </div>
           <div className="inline-block p-8 text-center">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
+            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full  dark:text-white dark:bg-[#2e2e2e] bg-indigo-50">
               <svg
                 className="w-10 h-10 text-deep-purple-accent-400"
                 stroke="currentColor"
@@ -102,12 +102,12 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <p className="font-bold tracking-wide text-gray-800">
+            <p className="font-bold tracking-wide  dark:text-white  text-gray-800">
               Do it faster
             </p>
           </div>
           <div className="inline-block p-8 text-center">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
+            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50  dark:text-white dark:bg-[#2e2e2e]">
               <svg
                 className="w-10 h-10 text-deep-purple-accent-400"
                 stroke="currentColor"
@@ -122,23 +122,23 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <p className="font-bold tracking-wide text-gray-800">
+            <p className="font-bold tracking-wide  dark:text-white  text-gray-800">
               Working harder
             </p>
           </div>
         </div>
       </div>
       <div >
-        <div className="mx-4 md:mx-12 py-8 md:py-12 grid place-content-center px-4 md:px-0">
+        <div className="px-4 md:px-12 py-8 md:py-12 grid place-content-center px-4 md:px-0  dark:text-white dark:bg-[#2e2e2e]">
           <div className="lg:flex justify-start items-center lg:gap-28">
             <div className="">
-              <h1 className="font-bold text-5xl text-gray-800">Newsletter</h1>
-              <p className="pt-8 md:pt-4 text-justify text-gray-600">Sign up for our newsletter and get weekly updates. We only send emails about our latest products on the market once a week every Friday.</p>
+              <h1 className="font-bold text-5xl text-gray-800  dark:text-white dark:bg-[#2e2e2e]">Newsletter</h1>
+              <p className="pt-8 md:pt-4 text-justify text-gray-600  dark:text-white dark:bg-[#2e2e2e]">Sign up for our newsletter and get weekly updates. We only send emails about our latest products on the market once a week every Friday.</p>
               <div className="mt-8 md:flex justify-start md:gap-4">
                 <input type="email" placeholder="Your Email" className="placeholder-gray-600 w-full md:w-1/2 p-4 grid place-items-center border rounded-md focus:outline-none" />
                 <button className="w-full md:w-auto bg-blue-600 text-white px-8 py-4 border rounded-md hover:bg-blue-700 grid place-items-center font-semibold mt-4 md:mt-0 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50">Subscribe</button>
               </div>
-              <p className="pt-4 text-xs text-gray-600">Read our <u className="cursor-pointer no-underline hover:underline">privacy policy</u></p>
+              <p className="pt-4 text-xs text-gray-600  dark:text-white dark:bg-[#2e2e2e]">Read our <u className="cursor-pointer no-underline hover:underline  dark:text-white dark:bg-[#2e2e2e]">privacy policy</u></p>
             </div>
             <div className="pt-8 lg:pt-0">
               <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="man in black suit holding brown paper" className=" md:h-96 w-full rounded-lg" />

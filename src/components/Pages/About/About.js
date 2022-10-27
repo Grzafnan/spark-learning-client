@@ -3,8 +3,8 @@ import React from 'react';
 const About = () => {
   return (
     <>
-      <div>
-        <div className="relative py-16 bg-gradient-to-b from-blue-700 to-blue-600 flex justify-center items-center">
+      <div className=' dark:text-white dark:bg-[#2e2e2e]'>
+        <div className="relative py-16 bg-gradient-to-b from-blue-700 to-blue-600 flex justify-center items-center ">
           <div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-10 text-white">How can we help you?</h1>
             <div className="bg-blue-800 rounded relative mt-6 lg:mt-14 py-4 pl-4 flex items-center w-full">
@@ -19,10 +19,10 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="container mx-auto py-9 flex flex-col items-center justify-center">
+        <div className="container mx-auto py-9 flex flex-col items-center justify-center  dark:text-white dark:bg-[#2e2e2e]">
           <div role="list" className="w-11/12 md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+            <div role="listitem" className="focus:outline-none ">
+              <a href="/" className=" focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-settings" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -32,14 +32,14 @@ const About = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-base font-medium leading-none text-gray-800">Getting Started</p>
-                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
+                    <p className="text-base font-medium leading-none text-gray-800  dark:text-white">Getting Started</p>
+                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal  dark:text-white  text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
                   </div>
                 </div>
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white  dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-users" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -51,14 +51,14 @@ const About = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-base font-medium leading-none text-gray-800">User Account</p>
-                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
+                    <p className="text-base font-medium leading-none text-gray-800  dark:text-white ">User Account</p>
+                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal  dark:text-white text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
                   </div>
                 </div>
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white  dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-adjustments-horizontal" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -75,14 +75,14 @@ const About = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-base font-medium leading-none text-gray-800">Product Features</p>
-                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
+                    <p className="text-base font-medium leading-none text-gray-800  dark:text-white ">Product Features</p>
+                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12  dark:text-white ">Get started fast with installation and theme setup instructions</p>
                   </div>
                 </div>
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg width={33} height={33} viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,14 +90,14 @@ const About = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-base font-medium leading-none text-gray-800">Customization Options</p>
-                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
+                    <p className="text-base font-medium leading-none text-gray-800  dark:text-white ">Customization Options</p>
+                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12  dark:text-white ">Get started fast with installation and theme setup instructions</p>
                   </div>
                 </div>
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white  dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-credit-card" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -109,14 +109,14 @@ const About = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-base font-medium leading-none text-gray-800">Payment Gateways</p>
-                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
+                    <p className="text-base font-medium leading-none text-gray-800  dark:text-white ">Payment Gateways</p>
+                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12  dark:text-white ">Get started fast with installation and theme setup instructions</p>
                   </div>
                 </div>
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-lock" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -127,14 +127,14 @@ const About = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-base font-medium leading-none text-gray-800">Security Options</p>
-                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12">Get started fast with installation and theme setup instructions</p>
+                    <p className="text-base font-medium leading-none text-gray-800  dark:text-white ">Security Options</p>
+                    <p className="text-xs lg:text-sm xl:text-base lg:leading-normal text-gray-600 mt-2 2xl:w-7/12  dark:text-white ">Get started fast with installation and theme setup instructions</p>
                   </div>
                 </div>
               </a>
             </div>
           </div>
-          <div className="mt-9 md:mt-11 lg:mt-16">
+          <div className="mt-9 md:mt-11  lg:mt-16">
             <div className="container flex justify-center mx-auto pt-10">
               <div className='w-3/4 mb-16'>
                 <h1 className='text-3xl font-bold text-center'>
@@ -149,20 +149,20 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full bg-gray-100 px-10 pt-10">
+            <div className="w-full  dark:text-white dark:bg-[#2e2e2e] bg-gray-100 px-10 pt-10">
               <div className="container mx-auto">
                 <div className="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:text-white dark:bg-[#2e2e2e]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1564061170517-d3907caa96ea.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
                         </div>
                       </div>
-                      <div className="px-6 mt-16">
+                      <div className="px-6 mt-16 ">
                         <div className="font-bold text-3xl text-center pb-1">Andres Berlin</div>
-                        <p className="text-gray-800 text-sm text-center">Chief Executive Officer</p>
-                        <p className="text-center text-gray-600 text-base pt-3 font-normal">The CEO's role in raising a company's corporate IQ is to establish an atmosphere that promotes knowledge sharing and collaboration.</p>
+                        <p className="text-gray-800  dark:text-white text-sm text-center">Chief Executive Officer</p>
+                        <p className="text-center text-gray-600 text-base pt-3 font-normal  dark:text-white ">The CEO's role in raising a company's corporate IQ is to establish an atmosphere that promotes knowledge sharing and collaboration.</p>
                         <div className="w-full flex justify-center pt-5 pb-5">
                           <a href="/" className="mx-5">
                             <div>
@@ -192,18 +192,18 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#2e2e2e]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1530577197743-7adf14294584.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
                         </div>
                       </div>
                       <div className="px-6 mt-16">
-                        <div className="font-bold text-3xl text-center pb-1">Silene Tokyo</div>
-                        <p className="text-gray-800 text-sm text-center">Product Design Head</p>
-                        <p className="text-center text-gray-600 text-base pt-3 font-normal">The emphasis on innovation and technology in our companies has resulted in a few of them establishing global benchmarks in product design and development.</p>
-                        <div className="w-full flex justify-center pt-5 pb-5">
-                          <a href="/" className="mx-5">
+                        <div className="font-bold text-3xl text-center pb-1  dark:text-white ">Silene Tokyo</div>
+                        <p className="text-gray-800 text-sm text-center  dark:text-white ">Product Design Head</p>
+                        <p className="text-center text-gray-600 text-base pt-3 font-normal  dark:text-white ">The emphasis on innovation and technology in our companies has resulted in a few of them establishing global benchmarks in product design and development.</p>
+                        <div className="w-full flex justify-center pt-5 pb-5 ">
+                          <a href="/" className="mx-5 ">
                             <div>
                               <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="#718096" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
                                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
@@ -231,16 +231,16 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white">
+                    <div className="rounded overflow-hidden shadow-md bg-white    dark:bg-[#2e2e2e]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1566753323558-f4e0952af115.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
                         </div>
                       </div>
                       <div className="px-6 mt-16">
-                        <div className="font-bold text-3xl text-center pb-1">Johnson Stone</div>
-                        <p className="text-gray-800 text-sm text-center">Manager Development</p>
-                        <p className="text-center text-gray-600 text-base pt-3 font-normal">Our services encompass the assessment and repair of property damage caused by water, fire, smoke, or mold. We can also be a part of the restoration.</p>
+                        <div className="font-bold text-3xl text-center pb-1  dark:text-white ">Johnson Stone</div>
+                        <p className="text-gray-800 text-sm text-center  dark:text-white ">Manager Development</p>
+                        <p className="text-center text-gray-600 text-base pt-3 font-normal  dark:text-white ">Our services encompass the assessment and repair of property damage caused by water, fire, smoke, or mold. We can also be a part of the restoration.</p>
                         <div className="w-full flex justify-center pt-5 pb-5">
                           <a href="/" className="mx-5">
                             <div>
@@ -270,16 +270,16 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#2e2e2e]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/boy-smiling_23-2148155640.jpg" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
                         </div>
                       </div>
                       <div className="px-6 mt-16">
-                        <div className="font-bold text-3xl text-center pb-1">Dean Jones</div>
-                        <p className="text-gray-800 text-sm text-center">Principal Software Engineer</p>
-                        <p className="text-center text-gray-600 text-base pt-3 font-normal">An avid open-source developer who loves to be creative and inventive. I have 20 years of experience in the field.</p>
+                        <div className="font-bold text-3xl text-center pb-1  dark:text-white ">Dean Jones</div>
+                        <p className="text-gray-800 text-sm text-center  dark:text-white ">Principal Software Engineer</p>
+                        <p className="text-center text-gray-600 text-base pt-3 font-normal  dark:text-white ">An avid open-source developer who loves to be creative and inventive. I have 20 years of experience in the field.</p>
                         <div className="w-full flex justify-center pt-5 pb-5">
                           <a href="/" className="mx-5">
                             <div>
@@ -309,16 +309,16 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white">
+                    <div className="rounded overflow-hidden shadow-md bg-white dark:bg-[#2e2e2e]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/blond-man-happy-expression_1194-2873.jpg" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
                         </div>
                       </div>
                       <div className="px-6 mt-16">
-                        <div className="font-bold text-3xl text-center pb-1">Rachel Adams</div>
-                        <p className="text-gray-800 text-sm text-center">Product Design Head</p>
-                        <p className="text-center text-gray-600 text-base pt-3 font-normal">Product designer with interests in immersive computing and XR, political ventures, and emerging technologies. Able to take ideas and give them a life.</p>
+                        <div className="font-bold text-3xl text-center pb-1  dark:text-white ">Rachel Adams</div>
+                        <p className="text-gray-800 text-sm text-center  dark:text-white ">Product Design Head</p>
+                        <p className="text-center text-gray-600 text-base pt-3 font-normal  dark:text-white ">Product designer with interests in immersive computing and XR, political ventures, and emerging technologies. Able to take ideas and give them a life.</p>
                         <div className="w-full flex justify-center pt-5 pb-5">
                           <a href="/" className="mx-5">
                             <div>
@@ -348,16 +348,16 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#2e2e2e]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1570211776045-af3a51026f4a.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
                         </div>
                       </div>
                       <div className="px-6 mt-16">
-                        <div className="font-bold text-3xl text-center pb-1">Charles Keith</div>
-                        <p className="text-gray-800 text-sm text-center">UX Designer</p>
-                        <p className="text-center text-gray-600 text-base pt-3 font-normal">A UX designer is the voice of the customer. Our job is to look beyond the business goals. We don't just experience user interface but also questions it.</p>
+                        <div className="font-bold text-3xl text-center pb-1  dark:text-white ">Charles Keith</div>
+                        <p className="text-gray-800 text-sm text-center  dark:text-white">UX Designer</p>
+                        <p className="text-center text-gray-600 text-base pt-3 font-normal  dark:text-white ">A UX designer is the voice of the customer. Our job is to look beyond the business goals. We don't just experience user interface but also questions it.</p>
                         <div className="w-full flex justify-center pt-5 pb-5">
                           <a href="/" className="mx-5">
                             <div>

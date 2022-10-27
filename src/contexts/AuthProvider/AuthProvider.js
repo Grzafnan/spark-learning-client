@@ -10,7 +10,22 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [enabled, setEnabled] = useState(false);
+  const [theme, setTheme] = useState('light');
 
+
+  useEffect(() => {
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme])
+
+  const handelThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
 
 
   const createUser = (email, password) => {
@@ -75,7 +90,8 @@ const AuthProvider = ({ children }) => {
     setLoading,
     resetPassword,
     enabled,
-    setEnabled
+    setEnabled,
+    handelThemeSwitch
   }
 
 
