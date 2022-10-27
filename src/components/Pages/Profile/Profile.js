@@ -29,6 +29,7 @@ const Profile = () => {
       .catch((error) => {
         // An error occurred
         console.error(error.message);
+        toast.error(error.message, { autoClose: 500 })
         // ...
       })
   }

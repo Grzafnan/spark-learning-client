@@ -9,12 +9,12 @@ const Courses = () => {
   // console.log(coursesData);
 
   return (
-    <div className='md:grid md:grid-cols-12 gap-20 my-10'>
-      <div className='grid col-span-3 '>
+    <div className='md:grid md:grid-cols-12 md:gap-16 lg:gap-10 md:px-6 my-10'>
+      <div className='md:grid md:col-span-3'>
         <LeftSideNav />
 
       </div>
-      <div className='md:grid md:col-span-9 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-4 w-full'>
+      <div className='md:grid md:col-span-9 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-4'>
 
         {
           coursesData.map(course => <CourseContainer key={course._id
