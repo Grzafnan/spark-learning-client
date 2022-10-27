@@ -4,12 +4,25 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
 import logo from '../../../../assets/logo.png'
+import { toast } from 'react-toastify';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [enabled, setEnabled] = useState(false);
 
   const { user, logOut } = useContext(AuthContext);
+
+
+  const handelLogout = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+        toast.success('Sign Out Success')
+      }).catch((error) => {
+        // An error happened.
+        toast.error(error.message)
+      });
+  }
 
   return (
     <div className="px-4 py-5  w-full md:px-24 lg:px-12 shadow-md  bg-gray-100 sticky top-0 z-40">
@@ -99,7 +112,7 @@ const Header = () => {
 
               <li>
                 <button
-                  onClick={logOut}
+                  onClick={handelLogout}
                   className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
                   aria-label="Log out"
                   title="Log out"
@@ -279,7 +292,7 @@ const Header = () => {
 
                         <li>
                           <button
-                            onClick={logOut}
+                            onClick={handelLogout}
                             className="inline-flex items-center justify-center h-10 px-4 font-medium tracking-wide w-full  transition duration-200 rounded shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:shadow-outline focus:outline-none"
                             aria-label="Log out"
                             title="Log out"
