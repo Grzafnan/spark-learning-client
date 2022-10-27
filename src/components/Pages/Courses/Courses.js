@@ -1,6 +1,5 @@
 import React from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
-import AllCourses from './AllCourses/AllCourses';
+import { useLoaderData } from 'react-router-dom';
 import CourseContainer from './CourseContainer/CourseContainer';
 import LeftSideNav from './LeftSideNav/LeftSideNav';
 
