@@ -103,7 +103,7 @@ const Login = () => {
     resetPassword(resetEmail)
       .then(() => {
         // Password reset email sent!
-        toast.success('Reset Password sent successfully. Check your Email Address')
+        toast.success('Reset Password sent successfully.')
         setIsOpen(false);
         // ..
       })
