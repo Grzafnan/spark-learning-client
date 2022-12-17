@@ -4,8 +4,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 
 
-const LeftSideNav = () => {
-
+const LeftSideNav = ({ handelCourses }) => {
   const [categories, setCategories] = useState([]);
   const { user, logOut } = useContext(AuthContext);
 
@@ -30,8 +29,7 @@ const LeftSideNav = () => {
 
   return (
     <>
-      <div div className="h-full m-3 p-2 space-y-2  dark:bg-gray-900 dark:text-gray-100 border-[1px] shadow-lg border-blue-600 rounded md:w-64 w-11/12 lg:w-full mx-auto md:mx-0 " >
-
+      <div div className="m-3 p-2 space-y-2  dark:bg-gray-900 dark:text-gray-100 border-[1px] shadow-lg border-blue-600 rounded max-h-[500px]" >
         <div className="flex items-center p-2 space-x-4">
           <img src={user?.photoURL
             ? user?.photoURL
@@ -47,13 +45,18 @@ const LeftSideNav = () => {
         <div className="divide-y divide-gray-700">
           <ul className="pt-2 pb-4 space-y-1 text-sm">
             {
-              categories.map(category => <li key={category.id} className="bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold">
-                <Link rel="noopener noreferrer" to={`/courses/${category.id}`} className="flex items-center p-2 space-x-3 rounded-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-gray-400">
-                    <path d="M68.983,382.642l171.35,98.928a32.082,32.082,0,0,0,32,0l171.352-98.929a32.093,32.093,0,0,0,16-27.713V157.071a32.092,32.092,0,0,0-16-27.713L272.334,30.429a32.086,32.086,0,0,0-32,0L68.983,129.358a32.09,32.09,0,0,0-16,27.713V354.929A32.09,32.09,0,0,0,68.983,382.642ZM272.333,67.38l155.351,89.691V334.449L272.333,246.642ZM256.282,274.327l157.155,88.828-157.1,90.7L99.179,363.125ZM84.983,157.071,240.333,67.38v179.2L84.983,334.39Z"></path>
-                  </svg>
-                  <span>{category.name} </span>
-                </Link>
+              categories.map(category => <li key={category.id} className="bg-blue-600 hover:bg-blue-800 text-white rounded-md font-semibold">
+                <button
+                  onClick={() => handelCourses(`${category.id}`)}
+                  className='w-full'
+                >
+                  <Link rel="noopener noreferrer" className="flex items-center p-2 space-x-3 rounded-md focus:bg-blue-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-gray-400">
+                      <path d="M68.983,382.642l171.35,98.928a32.082,32.082,0,0,0,32,0l171.352-98.929a32.093,32.093,0,0,0,16-27.713V157.071a32.092,32.092,0,0,0-16-27.713L272.334,30.429a32.086,32.086,0,0,0-32,0L68.983,129.358a32.09,32.09,0,0,0-16,27.713V354.929A32.09,32.09,0,0,0,68.983,382.642ZM272.333,67.38l155.351,89.691V334.449L272.333,246.642ZM256.282,274.327l157.155,88.828-157.1,90.7L99.179,363.125ZM84.983,157.071,240.333,67.38v179.2L84.983,334.39Z"></path>
+                    </svg>
+                    <span>{category.name} </span>
+                  </Link>
+                </button>
               </li>
               )
             }

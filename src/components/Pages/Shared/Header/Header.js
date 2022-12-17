@@ -15,13 +15,7 @@ const Header = () => {
 
   const { user, logOut, enabled, setEnabled, handelThemeSwitch } = useContext(AuthContext);
 
-  const [isDarkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = (checked: boolean) => {
-    setDarkMode(checked);
-    handelThemeSwitch()
-  };
-
+  // 
 
 
 
@@ -54,11 +48,8 @@ const Header = () => {
           className="inline-flex items-center"
         >
           <img src={logo} className="w-20" alt="" />
-          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 ">
-            Spark Learning
-          </span>
         </Link>
-        <ul className="flex items-center hidden space-x-8 lg:flex">
+        <ul className="items-center hidden space-x-8 lg:flex">
           <li>
             <NavLink
               to="/home"
@@ -122,6 +113,7 @@ const Header = () => {
                       src={user?.photoURL}
                       className='rounded-full'
                       title={user?.displayName}
+                      alt={user?.displayName}
                       style={{ height: '35px', width: '35px' }}
                     />
                       : <FaUserAlt title={user?.displayName} className='hidden lg:block' />
@@ -203,7 +195,7 @@ const Header = () => {
                       className="inline-flex items-center"
                     >
                       <img src={logo} className="w-20" alt="" />
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase dark:text-white">
                         Spark Learning
                       </span>
                     </Link>
@@ -303,6 +295,7 @@ const Header = () => {
                                 title={user.displayName}
                                 src={user?.photoURL}
                                 className='rounded-full'
+                                alt=''
                                 style={{ height: '35px', width: '35px' }}
                               />
                                 : <FaUserAlt title={user.displayName} />

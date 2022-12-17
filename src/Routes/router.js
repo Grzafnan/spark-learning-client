@@ -1,7 +1,6 @@
 import { createBrowserRouter, } from "react-router-dom";
 import About from "../components/Pages/About/About";
 import Blog from "../components/Pages/Blog/Blog";
-import AllCourses from "../components/Pages/Courses/AllCourses/AllCourses";
 import CheckOut from "../components/Pages/Courses/CheckOut/CheckOut";
 import Courses from "../components/Pages/Courses/Courses";
 import CourseSummary from "../components/Pages/Courses/CourseSummary/CourseSummary";
@@ -54,21 +53,14 @@ export const router = createBrowserRouter([
         element: <Profile />
       },
       {
+        path: '/courses',
+        element: <Courses />
+      },
+      {
         path: '/course/:id',
         element: <CourseSummary />,
         loader: ({ params }) => fetch(`https://xplore-server-side-grzafnan.vercel.app/course/${params.id}`)
       },
-      {
-        path: '/courses',
-        element: <Courses />,
-        loader: () => fetch('https://xplore-server-side-grzafnan.vercel.app/courses'),
-      },
-      {
-        path: '/courses/:id',
-        element: <AllCourses />,
-        loader: ({ params }) => fetch(`https://xplore-server-side-grzafnan.vercel.app/courses/${params.id}`)
-      },
-
       {
         path: 'checkout/:id',
         element: <PrivateRoutes><CheckOut /></PrivateRoutes>,

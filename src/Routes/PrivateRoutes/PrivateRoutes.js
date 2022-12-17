@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { Navigate, useLocation } from "react-router-dom";
-import { Bars } from 'react-loader-spinner'
+import Loader from '../../components/Pages/Shared/Loader/Loader';
 
 
 const PrivateRoutes = ({ children }) => {
@@ -10,17 +10,7 @@ const PrivateRoutes = ({ children }) => {
 
 
   if (loading) {
-    return <div className='flex justify-center items-center w-full min-h-screen'>
-      <Bars
-        height="80"
-        width="80"
-        color="#0000FF"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
-    </div>
+    return <Loader />
   }
 
   if (user && user.uid) {

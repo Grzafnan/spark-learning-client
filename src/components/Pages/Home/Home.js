@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
   return (
-    <div className="mb-16 min-h-screen">
+    <div className="pb-16 min-h-screen dark:bg-[#2e2e2e]">
       <div className="bg-gray-100  dark:text-white dark:bg-[#2e2e2e]">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -129,7 +129,7 @@ const Home = () => {
         </div>
       </div>
       <div >
-        <div className="px-4 md:px-12 py-8 md:py-12 grid place-content-center px-4 md:px-0  dark:text-white dark:bg-[#2e2e2e]">
+        <div className="md:px-12 py-8 md:py-12 grid place-content-center px-4  dark:text-white dark:bg-[#2e2e2e]">
           <div className="lg:flex justify-start items-center lg:gap-28">
             <div className="">
               <h1 className="font-bold text-5xl text-gray-800  dark:text-white dark:bg-[#2e2e2e]">Newsletter</h1>
