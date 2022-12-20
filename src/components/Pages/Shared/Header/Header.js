@@ -55,7 +55,7 @@ const Header = () => {
               to="/home"
               aria-label="Home"
               title="Home"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               Home
             </NavLink>
@@ -65,7 +65,7 @@ const Header = () => {
               to="/courses"
               aria-label="Courses"
               title="Courses"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               Courses
             </NavLink>
@@ -75,7 +75,7 @@ const Header = () => {
               to="/blog"
               aria-label="Blog"
               title="Blog"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               Blog
             </NavLink>
@@ -85,7 +85,7 @@ const Header = () => {
               to="/faq"
               aria-label="FAQ"
               title="FAQ"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               FAQ
             </NavLink>
@@ -96,7 +96,7 @@ const Header = () => {
               to='/about'
               aria-label="About us"
               title="About us"
-              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 border-b-2 border-b-blue-600 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
+              className={({ isActive }) => isActive ? "font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-500  dark:text-blue-600" : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-500  dark:text-white"}
             >
               About
             </NavLink>
