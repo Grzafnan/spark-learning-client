@@ -5,15 +5,15 @@ import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
 import logo from '../../../../assets/logo.png'
 import { toast } from 'react-toastify';
-
-
+import './darkmode.css'
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { user, logOut, enabled, setEnabled, handelThemeSwitch } = useContext(AuthContext);
+  const { user, logOut, enabled, handelThemeSwitch } = useContext(AuthContext);
 
   // 
 
@@ -31,15 +31,15 @@ const Header = () => {
   }
 
 
-  const handelSwitch = () => {
-    setEnabled(!enabled);
-    handelThemeSwitch();
-  }
+  // const handelSwitch = () => {
+  //   setEnabled(!enabled);
+  //   handelThemeSwitch();
+  // }
 
 
 
   return (
-    <div className="px-4 py-5 w-full md:px-24 lg:px-12 shadow-md bg-gray-100 dark:bg-[#2e2e2e] sticky top-0 z-40">
+    <div className="px-4 py-5 w-full md:px-24 lg:px-12 shadow-md bg-gray-100  dark:bg-gray-900  sticky top-0 z-40">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
@@ -105,7 +105,7 @@ const Header = () => {
           {
             user?.uid ? <>
               <li className='flex items-center'>
-                <span title={user?.displayName} className='font-semibold hidden lg:block'>{user?.displayName}</span>
+                {/* <span title={user?.displayName} className='font-semibold hidden lg:block'>{user?.displayName}</span> */}
 
                 <Link to='/profile' className='hidden lg:block ml-2'>
                   {
@@ -147,18 +147,12 @@ const Header = () => {
           }
 
           <li>
-            <Switch
+            <DarkModeSwitch
               checked={enabled}
-              onChange={handelSwitch}
-              className={`${enabled ? 'bg-black' : 'bg-blue-600'
-                } relative inline-flex h-6 w-11 items-center rounded-full`}
-            >
-              <span className="sr-only">Enable notifications</span>
-              <span
-                className={`${enabled ? 'translate-x-6' : 'translate-x-1'
-                  } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-              />
-            </Switch>
+              onChange={handelThemeSwitch}
+              size={40}
+              className={`${enabled ? 'bg-black' : 'bg-blue-600'}  rounded-full`}
+            />
           </li>
         </ul>
         <div className="lg:hidden">
@@ -185,7 +179,7 @@ const Header = () => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 dark:bg-[#2e2e2e] bg-white border rounded shadow-sm">
+              <div className="p-5  dark:bg-gray-900  bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div className='w-11/12 flex justify-between items-center '>
                     <Link
@@ -200,20 +194,14 @@ const Header = () => {
                       </span>
                     </Link>
 
-
-                    <Switch
+                    <DarkModeSwitch
+                      // style={{ marginBottom: '2rem' }}
                       checked={enabled}
-                      onChange={handelSwitch}
+                      onChange={handelThemeSwitch}
+                      size={40}
                       className={`${enabled ? 'bg-black' : 'bg-blue-600'
-                        } relative inline-flex h-6 w-11 items-center rounded-full`}
-                    >
-                      <span className="sr-only">Enable notifications</span>
-                      <span
-                        className={`${enabled ? 'translate-x-6' : 'translate-x-1'
-                          } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-                      />
-                    </Switch>
-
+                        }  inline-flex items-center rounded-full`}
+                    />
                   </div>
                   <div>
                     <button

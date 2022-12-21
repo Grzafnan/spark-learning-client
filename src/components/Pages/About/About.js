@@ -21,7 +21,7 @@ const About = () => {
         </div>
         <div className="container mx-auto py-9 flex flex-col items-center justify-center  dark:text-white dark:bg-[#2e2e2e]">
           <div role="list" className="w-11/12 md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div role="listitem" className="focus:outline-none ">
+            <div role="listitem" className="focus:outline-none dark:bg-[#1a1a1a]">
               <a href="/" className=" focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
@@ -39,7 +39,7 @@ const About = () => {
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white  dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white  dark:bg-[#1a1a1a] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-users" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -58,7 +58,7 @@ const About = () => {
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white  dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white  dark:bg-[#1a1a1a] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-adjustments-horizontal" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +82,7 @@ const About = () => {
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white dark:bg-[#1a1a1a] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg width={33} height={33} viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@ const About = () => {
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white  dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white  dark:bg-[#1a1a1a] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-credit-card" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -116,7 +116,7 @@ const About = () => {
               </a>
             </div>
             <div role="listitem" className="focus:outline-none">
-              <a href="/" className="bg-white dark:bg-[#2e2e2e] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
+              <a href="/" className="bg-white dark:bg-[#1a1a1a] focus:outline-none shadow-md flex items-center p-4 lg:p-8 cursor-pointer">
                 <div className="flex">
                   <div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-lock" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#3730A3" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -149,11 +149,11 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full  dark:text-white dark:bg-[#2e2e2e] bg-gray-100 px-10 pt-10">
+            <div className="w-full  dark:text-white dark:bg-[#2e2e2e] px-10 pt-10">
               <div className="container mx-auto">
                 <div className="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white  dark:text-white dark:bg-[#2e2e2e]">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:text-white dark:bg-[#1a1a1a]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1564061170517-d3907caa96ea.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
@@ -192,7 +192,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#2e2e2e]">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#1a1a1a]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1530577197743-7adf14294584.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
@@ -231,7 +231,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white    dark:bg-[#2e2e2e]">
+                    <div className="rounded overflow-hidden shadow-md bg-white    dark:bg-[#1a1a1a]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1566753323558-f4e0952af115.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
@@ -270,7 +270,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#2e2e2e]">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#1a1a1a]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/boy-smiling_23-2148155640.jpg" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
@@ -309,7 +309,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white dark:bg-[#2e2e2e]">
+                    <div className="rounded overflow-hidden shadow-md bg-white dark:bg-[#1a1a1a]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/blond-man-happy-expression_1194-2873.jpg" alt='' className="rounded-full object-cover h-full w-full shadow-md" />
@@ -348,7 +348,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#2e2e2e]">
+                    <div className="rounded overflow-hidden shadow-md bg-white  dark:bg-[#1a1a1a]">
                       <div className="absolute -mt-20 w-full flex justify-center">
                         <div className="h-32 w-32">
                           <img src="https://cdn.tuk.dev/assets/photo-1570211776045-af3a51026f4a.jfif" alt='' className="rounded-full object-cover h-full w-full shadow-md" />

@@ -38,7 +38,7 @@ const Profile = () => {
   return (
     <>
       {
-        user && user?.emailVerified ? <div className="flex justify-center my-10 md:my-20" >
+        user && user?.emailVerified ? <div className="flex justify-center py-10 md:py-20 dark:bg-[#1a1a1a]" >
           <div className="flex flex-col justify-center w-10/12 md:w-2/4 lg:w-2/5 p-6 shadow-xl rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
             <div className="flex justify-between items-center mb-12">
               <div className="">

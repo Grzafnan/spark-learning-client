@@ -4,7 +4,7 @@ import logo from '../../../../assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-gray-100  dark:text-white dark:bg-[#2e2e2e]">
+    <footer aria-label="Site Footer" className="bg-gray-100  dark:text-white  dark:bg-gray-900">
       <div
         className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24"
       >
@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
 
             <p
-              className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left"
+              className="mx-auto mt-6 max-w-md text-center leading-relaxed dark:text-gray-100 text-gray-500 lg:text-left"
             >
               An Online Training like in a University and pursue your career in Software Development. Stay motivated to complete your courses in the best possible manner.
             </p>
@@ -52,25 +52,25 @@ const Footer = () => {
               className="flex flex-wrap justify-center gap-6 md:gap-8 lg:justify-end lg:gap-12"
             >
               <li>
-                <Link className="text-gray-700 transition hover:text-blue-700" to="/about">
+                <Link className="dark:text-gray-100 text-gray-700 transition hover:text-blue-700" to="/about">
                   About
                 </Link>
               </li>
 
               <li>
-                <a className="text-gray-700 transition hover:text-blue-700" href="/">
+                <a className="dark:text-gray-100 text-gray-700 transition hover:text-blue-700" href="/">
                   Services
                 </a>
               </li>
 
               <li>
-                <a className="text-gray-700 transition hover:text-blue-700" href="/">
+                <a className="dark:text-gray-100 text-gray-700 transition hover:text-blue-700" href="/">
                   Projects
                 </a>
               </li>
 
               <li>
-                <Link className="text-gray-700 transition hover:text-blue-700" to="/blog">
+                <Link className="dark:text-gray-100 text-gray-700 transition hover:text-blue-700" to="/blog">
                   Blog
                 </Link>
               </li>
@@ -78,7 +78,7 @@ const Footer = () => {
           </nav>
         </div>
 
-        <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
+        <p className="mt-12 text-center text-sm dark:text-gray-100 text-gray-500 lg:text-right">
           Copyright &copy; {(new Date().getFullYear())}. All rights reserved by <a className='hover:text-blue-600 hover:underline' href="https://www.linkedin.com/in/grzafnan/" target='_blank'>Shakil Ahmmed</a>.
         </p>
       </div>

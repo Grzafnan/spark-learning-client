@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../../firebase/firebase.config';
+import useLocalStorage from 'use-local-storage';
 
 const auth = getAuth(app)
 export const AuthContext = createContext();
@@ -10,22 +11,22 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [enabled, setEnabled] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useLocalStorage("dark-mode", "light");
 
-
-  useEffect(() => {
-
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-    else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme])
 
   const handelThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    if (theme === 'light') {
+      setTheme('dark');
+      setEnabled(!enabled)
+    } else {
+      setTheme('light');
+      setEnabled(!enabled)
+    }
   }
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
 
   const createUser = (email, password) => {
@@ -90,7 +91,7 @@ const AuthProvider = ({ children }) => {
     setLoading,
     resetPassword,
     enabled,
-    setEnabled,
+    // setEnabled,
     handelThemeSwitch
   }
 

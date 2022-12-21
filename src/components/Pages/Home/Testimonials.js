@@ -141,7 +141,7 @@ const Testimonials = () => {
                   {
                     data?.map(d => <SwiperSlide key={d?.id}>
                       <blockquote
-                        class="flex h-full flex-col justify-between bg-white dark:bg-[#1a1a1a] p-12"
+                        class="flex h-full flex-col justify-between bg-white  dark:bg-gray-900 p-12"
                       >
                         <div>
                           <div class="flex gap-0.5 text-green-500">

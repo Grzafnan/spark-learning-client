@@ -55,7 +55,7 @@ const HomeCards = () => {
               data?.map(card =>
                 <a
                   key={card?.id}
-                  class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-blue-500/10 hover:shadow-blue-500/50"
+                  class="block  dark:bg-gray-900  rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-blue-500/10 hover:shadow-blue-500/50"
                   href="/"
                 >
                   <svg
