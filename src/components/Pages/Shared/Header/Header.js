@@ -31,13 +31,6 @@ const Header = () => {
   }
 
 
-  // const handelSwitch = () => {
-  //   setEnabled(!enabled);
-  //   handelThemeSwitch();
-  // }
-
-
-
   return (
     <div className="px-4 py-5 w-full md:px-24 lg:px-12 shadow-md bg-gray-100  dark:bg-gray-900  sticky top-0 z-40">
       <div className="relative flex items-center justify-between">
@@ -151,7 +144,7 @@ const Header = () => {
               checked={enabled}
               onChange={handelThemeSwitch}
               size={40}
-              className={`${enabled ? 'bg-black' : 'bg-blue-600'}  rounded-full`}
+              className={`${enabled ? 'bg-black' : 'bg-blue-600'}  rounded-full p-1`}
             />
           </li>
         </ul>
@@ -189,9 +182,6 @@ const Header = () => {
                       className="inline-flex items-center"
                     >
                       <img src={logo} className="w-20" alt="" />
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase dark:text-white">
-                        Spark Learning
-                      </span>
                     </Link>
 
                     <DarkModeSwitch
@@ -200,7 +190,7 @@ const Header = () => {
                       onChange={handelThemeSwitch}
                       size={40}
                       className={`${enabled ? 'bg-black' : 'bg-blue-600'
-                        }  inline-flex items-center rounded-full`}
+                        }   rounded-full p-1`}
                     />
                   </div>
                   <div>
